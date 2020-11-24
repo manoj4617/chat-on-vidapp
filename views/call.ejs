@@ -1,0 +1,18 @@
+<%- include('./header.ejs'); -%>
+
+<div class="container">
+    <div class="msg">
+        <p>
+            Create a room and invite your friends 
+            to the room by sharing them the link
+            and have a fun time..!!
+        </p>
+    </div>
+    <div class="frm-room">
+        <form action="/create_room" method="POST">
+            <p>Create a room</p>
+            <input type="text" id="room" name="room" placeholder="Name your room...">
+            <input type="submit" value="Create room">
+        </form>
+    </div>
+</div>

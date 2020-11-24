@@ -1,0 +1,60 @@
+<%- include("./header.ejs") %> 
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+      var username = "<%= user.username %>";
+    </script>
+    
+    <div class="main">
+      <div class="main__left">
+        <div class="main__videos">
+          <div class="room_name">
+            <h2><%= room_name %> </h2>
+          </div>
+          <div id="video-grid">
+          </div>
+        </div>
+        <div class="main__controls">
+          <div class="main__controls_block">
+            <div class="main__controls_button" id="muteButton" onclick="muteUnmute()">
+              <i class="fa fa-microphone"></i>
+              <span>Mute</span>
+            </div>
+            <div class="main__controls_button"
+              id="playPauseVideo"
+              onclick="playStop()"
+            >
+              <i class="fa fa-video-camera"></i>
+              <span>Pause Video</span>
+            </div>
+            <button class="main__controls_button" data-modal-target="#modal">
+              <i class="fa fa-users"></i>
+              <span>Participants</span>
+            </button>
+            <div class="modal" id="modal">
+              <div class="modal-header">
+                <div class="title">Participants</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <ul class="modal-body">
+              </ul>
+            </div>
+            <div id="overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="main__right">
+        <div class="main__header">
+          <h3>Chat</h3>
+        </div>
+        <div class="main__chat__window" id="main__chat__window">
+          <ul class="messages" id="all_messages"></ul>
+        </div>
+        <div class="main__message_container">
+          <input type="text" id="chat_message" placeholder="Type message here.."/>
+          <i class="fa fa-paper-plane-o" id="send-button" aria-hidden="false"></i>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<%- include("./header.ejs") %>
+
+<header>
+    <div class="smoothie">
+      <img src="/logo.png" alt="Chat-On">
+    </div>
+    <div class="headings">
+      <h2>CHAT WITH YOUR FRIENDS</h2>
+      <h3>By Wired Coders</h3>
+      <a href="/call" class="btn">Start a call</a>
+    </div>
+    <% if (user) { %>
+      <div class="connect_call">
+         <p>Join a room</p>
+         <input type="text" name="room-id" id="room-id" placeholder="Room ID">
+         <button>Join</button>
+      </div>
+    <% } %>
+</header>
+<script>
+  const op = document.querySelector('button');
+  op.addEventListener('click', async (e)=>{
+    e.preventDefault();
+    const room_id = document.getElementById('room-id').value;
+    console.log(room_id);
+    window.location = room_id;
+  })
+</script>
+
