@@ -15,7 +15,7 @@ const peerServer = ExpressPeerServer(server, {
 });
 
 //database connection
-const dburi = 'mongodb+srv://manojadmin:Manoj4617@cluster0.qgcef.mongodb.net/videochat'
+const dburi // dburi = {db_connection_string}
 mongoose.connect(dburi, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
   .then((result) => server.listen(process.env.PORT || 4000))
   .catch((err) => console.log(err));
